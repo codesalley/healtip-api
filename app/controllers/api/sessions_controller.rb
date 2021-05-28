@@ -44,6 +44,7 @@ class API::SessionsController < ApplicationController
 				end
     end
 
+
     private 
     EXP = Time.now.to_i + 7 * 3600
     SECRET_KEY = 'codesalley'
