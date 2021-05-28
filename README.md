@@ -1,5 +1,5 @@
 # Healtip 
-****An Api that allows users to create accounts and setup appointments with health professionals both inperson and remote****
+****An API that allows users to create accounts and set up appointments with health professionals both in-person and remote****
 
 
 
