@@ -24,7 +24,24 @@ class API::SessionsController < ApplicationController
 
     end
     def login
-        render json: {msg: 'login route'}
+				if params[:type] == 'user'
+					newUser = User.find_by(email: params[:email].downcase)
+					if newUser
+						render json: {s_token: gen_token(newUser)} if newUser.password_digest == params[:password]
+						render json: {msg: 'invalid credentials'} if newUser.password_digest != params[:password]
+					else
+						render json: {msg: 'invalid credentials'}
+					end
+				end
+				if params[:type] == 'doctor'
+					newDoctor = Doctor.find_by(email: params[:email].downcase)
+					if newDoctor
+						render json: {s_token: gen_token(newDoctor)} if newDoctor.password_digest == params[:password]
+						render json: {msg: 'invalid credentials'} if newDoctor.password_digest != params[:password]
+					else
+						render json: {msg: 'invalid credentials'}
+					end
+				end
     end
 
     private 
