@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  time: 2021-05-28 13:05:29
+  category: MyString
+  pending: false
+  cancel: false
+  accepted: false
+  location: MyString
+
+two:
+  name: MyString
+  time: 2021-05-28 13:05:29
+  category: MyString
+  pending: false
+  cancel: false
+  accepted: false
+  location: MyString
