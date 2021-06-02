@@ -3,10 +3,12 @@
 
 
 ### keywords 
+
 - `` s-token: jwt token for authentication ``
 - `` type: [user, doctor] ``
 
 ## Endpoints 
+
 
 - ``METHOD: POST =>  '/signup'``
   ````
