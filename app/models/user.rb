@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-    before_save :downcase_email
-    validates :email, uniqueness: true
+  before_save :downcase_email
+  validates :email, uniqueness: true
 
-    has_secure_password
+  has_secure_password
 
-    
-    has_many :appointments, class_name: "Appointment", dependent: :destroy
-    has_many :doctors, :through => :appointments, source: :user
+  has_many :appointments, class_name: 'Appointment', dependent: :destroy
+  has_many :doctors, through: :appointments, source: :user
 
+  private
 
-    private 
-    def downcase_email
-       return self.email = email.downcase
-    end
+  def downcase_email
+    self.email = email.downcase
+  end
 end

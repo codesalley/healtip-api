@@ -1,7 +1,7 @@
-Rails.application.routes.draw do
-  
+# frozen_string_literal: true
 
-  namespace :api do 
+Rails.application.routes.draw do
+  namespace :api do
     post '/singup', to: 'sessions#singup'
     post '/login', to: 'sessions#login'
     get '/me', to: 'main#profile'
@@ -11,6 +11,5 @@ Rails.application.routes.draw do
     delete '/delete/:id', to: 'main#delete'
     put '/fav/:id', to: 'main#favorite'
     put '/unfav/:id', to: 'main#removeFav'
-
   end
 end
