@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   namespace :api do
-    post '/singup', to: 'sessions#singup'
+    post '/signup', to: 'sessions#signup'
     post '/login', to: 'sessions#login'
     get '/me', to: 'main#profile'
     get '/doctors', to: 'main#doctors'

@@ -2,7 +2,7 @@
 
 module API
   class SessionsController < ApplicationController
-    def singup
+    def signup
       if params[:type].downcase == 'user'
         newUser = User.new(full_name: params[:full_name], email: params[:email],
                            password_digest: params[:password], location: params[:location], age: params[:age])
