@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#login'
     get '/me', to: 'main#profile'
     get '/doctors', to: 'main#doctors'
+    get '/appoitments', to: 'main#appoitments'
     post '/book', to: 'main#book'
     delete '/delete/:id', to: 'main#delete'
     put '/fav/:id', to: 'main#favorite'

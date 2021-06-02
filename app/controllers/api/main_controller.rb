@@ -24,7 +24,7 @@ class API::MainController < ApplicationController
         patient = User.find_by(id: params[:user_id])
         doctor = Doctor.find_by(id: params[:doctor_id])
         aptTime = params[:time]
-        newApt = patient.appointments.build(doctor_id: doctor.id, name: "Apt with #{doctor.full_name}", time: aptTime, category: "check up", pending: true)
+        newApt = patient.appointments.build(doctor_id: doctor.id, name: "Apt with #{doctor.full_name}", time: aptTime, category: params[:category], pending: true, info: params[:info], location: params[:location])
         if newApt.save
             render json: newApt
             return 
@@ -39,6 +39,13 @@ class API::MainController < ApplicationController
       user = User.find_by(id: user_id)
       apt = user.appointments.find_by(id: params[:id].to_i)
       render json: {msg: 'Appointment deleted'}
+    end
+    def appoitments 
+        user_id = decode_token(request.headers['s-token'])
+        user = User.find_by(id: user_id)
+         apt = user.appointments.all 
+        render json: apt 
+
     end
     def favorite 
       user_id = decode_token(request.headers['s-token'])
@@ -69,5 +76,5 @@ class API::MainController < ApplicationController
 			user.save
 			render json: user
 		end
-		def 
+		
 end

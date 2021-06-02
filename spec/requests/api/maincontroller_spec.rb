@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Maincontrollers", type: :request do
-  describe "GET /index" do
+RSpec.describe "API::Maincontrollers", type: :request do
+  describe "GET /singup" do
     pending "add some examples (or delete) #{__FILE__}"
   end
 end

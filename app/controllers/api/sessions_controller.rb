@@ -30,7 +30,7 @@ class API::SessionsController < ApplicationController
 						render json: {s_token: gen_token(newUser)} if newUser.password_digest == params[:password]
 						render json: {msg: 'invalid credentials'} if newUser.password_digest != params[:password]
 					else
-						render json: {msg: 'invalid credentials'}
+						render json: {msg: 'invalid credentials'}, status: 400
 					end
 				end
 				if params[:type] == 'doctor'
@@ -39,7 +39,7 @@ class API::SessionsController < ApplicationController
 						render json: {s_token: gen_token(newDoctor)} if newDoctor.password_digest == params[:password]
 						render json: {msg: 'invalid credentials'} if newDoctor.password_digest != params[:password]
 					else
-						render json: {msg: 'invalid credentials'}
+						render json: {msg: 'invalid credentials'}, status: 400
 					end
 				end
     end
